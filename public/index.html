@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Bites - Hyderabad Food Delivery</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">Happy Bites</a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#restaurants">Restaurants</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#" id="login-btn">Login</a></li>
+                <li><a href="#" id="signup-btn">Sign Up</a></li>
+                <li><a href="#" id="cart-btn" class="cart-icon">🛒 <span id="cart-count">0</span></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            
+            <h1>Order Hyderabad's Finest Foods</h1>
+            <p>Enjoy authentic Biryani, Haleem, and more, delivered from Hyderabad's top restaurants!</p>
+            <a href="#menu" class="cta-button">Explore Menu</a>
+        </div>
+    </section>
+
+    <!-- Login Modal -->
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">×</span>
+            <h2>Login</h2>
+            <form id="login-form">
+                <input type="email" id="login-email" placeholder="Email" required>
+                <input type="password" id="login-password" placeholder="Password" required>
+                <button type="submit" class="cta-button">Login</button>
+            </form>
+            <p id="login-message"></p>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div id="signup-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">×</span>
+            <h2>Sign Up</h2>
+            <form id="signup-form">
+                <input type="text" id="signup-name" placeholder="Full Name" required>
+                <input type="email" id="signup-email" placeholder="Email" required>
+                <input type="password" id="signup-password" placeholder="Password" required>
+                <button type="submit" class="cta-button">Sign Up</button>
+            </form>
+            <p id="signup-message"></p>
+        </div>
+    </div>
+
+    <!-- Cart Modal -->
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">×</span>
+            <h2>Your Cart</h2>
+            <div id="cart-items"></div>
+            <p id="cart-total">Total: ₹0</p>
+            <button id="checkout-btn" class="cta-button" disabled>Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <!-- Transaction Modal -->
+    <div id="transaction-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">×</span>
+            <h2>Checkout</h2>
+            <form id="transaction-form">
+                <input type="text" id="delivery-address" placeholder="Delivery Address" required>
+                <select id="payment-method" required>
+                    <option value="" disabled selected>Select Payment Method</option>
+                    <option value="cod">Cash on Delivery</option>
+                    <option value="card">Credit/Debit Card</option>
+                    <option value="upi">UPI</option>
+                </select>
+                <button type="submit" class="cta-button">Confirm Order</button>
+            </form>
+            <p id="transaction-message"></p>
+        </div>
+    </div>
+
+    <!-- Food Menu Section -->
+    <section class="menu" id="menu">
+        <h2>Hyderabad's Famous Dishes</h2>
+        <div class="menu-grid">
+            <div class="menu-item" data-name="Hyderabadi Biryani" data-price="300">
+                <img src="images/biryani.jpg" alt="Hyderabadi Biryani">
+                <!-- Fallback: <img src="https://images.unsplash.com/photo-1598103606139-e595f23f9763" alt="Hyderabadi Biryani"> -->
+                <div class="menu-info">
+                    <h3>Hyderabadi Biryani</h3>
+                    <p>Aromatic rice layered with spiced meat, a Hyderabad classic.</p>
+                    <span>₹300</span>
+                    <button class="add-to-cart cta-button">Add to Cart</button>
+                </div>
+            </div>
+            <div class="menu-item" data-name="Haleem" data-price="250">
+                <img src="images/haleem.jpg" alt="Haleem">
+                <!-- Fallback: <img src="https://images.unsplash.com/photo-1626500126090-9d6b4b7d4f0d" alt="Haleem"> -->
+                <div class="menu-info">
+                    <h3>Haleem</h3>
+                    <p>Slow-cooked stew of meat, lentils, and wheat, topped with ghee.</p>
+                    <span>₹250</span>
+                    <button class="add-to-cart cta-button">Add to Cart</button>
+                </div>
+            </div>
+            <div class="menu-item" data-name="Pathar ka Gosht" data-price="400">
+                <img src="images/pathar-ka-gosht.jpg" alt="Pathar ka Gosht">
+                <!-- Fallback: <img src="https://images.unsplash.com/photo-1626075333910-5800f8fd35ba" alt="Pathar ka Gosht"> -->
+                <div class="menu-info">
+                    <h3>Pathar ka Gosht</h3>
+                    <p>Marinated meat cooked on a hot stone, rich in flavor.</p>
+                    <span>₹400</span>
+                    <button class="add-to-cart cta-button">Add to Cart</button>
+                </div>
+            </div>
+            <div class="menu-item" data-name="Qubani ka Meetha" data-price="150">
+                <img src="images/qubani-ka-meetha.jpg" alt="Qubani ka Meetha">
+                <!-- Fallback: <img src="https://images.unsplash.com/photo-1603894584373-2d33b999afe6" alt="Qubani ka Meetha"> -->
+                <div class="menu-info">
+                    <h3>Qubani ka Meetha</h3>
+                    <p>Sweet apricot dessert, served with cream or ice cream.</p>
+                    <span>₹150</span>
+                    <button class="add-to-cart cta-button">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Restaurants Section -->
+    <section class="restaurants" id="restaurants">
+        <h2>Top Hyderabad Restaurants</h2>
+        <div class="restaurant-grid">
+            <div class="restaurant-card">
+                <img src="images/paradise.jpg" alt="Paradise Biryani">
+                <!-- Fallback: <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4" alt="Paradise Biryani"> -->
+                <div class="restaurant-info">
+                    <h3>Paradise Biryani</h3>
+                    <p>Iconic for its Hyderabadi Biryani and kebabs. Multiple locations.</p>
+                    <a href="#" class="cta-button">View Menu</a>
+                </div>
+            </div>
+            <div class="restaurant-card">
+                <img src="images/bawarchi.jpg" alt="Bawarchi">
+                <!-- Fallback: <img src="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c" alt="Bawarchi"> -->
+                <div class="restaurant-info">
+                    <h3>Bawarchi</h3>
+                    <p>Famous for flavorful Biryani and North Indian dishes.</p>
+                    <a href="#" class="cta-button">View Menu</a>
+                </div>
+            </div>
+            <div class="restaurant-card">
+                <img src="images/shah-ghouse.jpg" alt="Shah Ghouse">
+                <!-- Fallback: <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092" alt="Shah Ghouse"> -->
+                <div class="restaurant-info">
+                    <h3>Shah Ghouse</h3>
+                    <p>Renowned for Haleem and Mutton Biryani, open late.</p>
+                    <a href="#" class="cta-button">View Menu</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <p>© 2025 Happy Bites. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Contact Us</a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
