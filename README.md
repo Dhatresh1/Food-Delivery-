@@ -14,7 +14,7 @@ Happy Bites is a responsive food delivery website specializing in Hyderabad's fa
 
 - 🌐 **HTML5** — Semantic and structured markup.
 - 🎨 **CSS3** — Custom styles and responsive layout.
-- ⚙️ **JavaScript ** — Interactive DOM manipulations and cart logic.
+- ⚙️ **JavaScript** — Interactive DOM manipulations and cart logic.
 
 ## 🚀 How to Run
 
